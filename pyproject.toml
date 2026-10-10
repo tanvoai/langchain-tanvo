@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-tanvo"
+version = "0.1.0"
+description = "LangChain tools for Tanvo: let agents generate images, video and songs on Nano Banana, Seedream, Kling, Veo, Seedance and Suno, and run 80 ready-made photo apps. The house image engine works without an API key."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10,<4.0"
+authors = [{ name = "Tanvo", email = "support@tanvo.ai" }]
+keywords = ["langchain", "langchain-tools", "tanvo", "ai agents", "image generation", "video generation", "text to image", "image to video", "ai music", "nano banana", "kling", "veo", "seedance", "suno"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Multimedia :: Graphics",
+  "Typing :: Typed",
+]
+dependencies = ["langchain-core>=1.0,<2.0", "tanvo>=0.1.0,<1.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "langchain-tests>=1.0,<2.0"]
+
+[project.urls]
+Homepage = "https://tanvo.ai/developers?utm_source=pypi&utm_medium=referral"
+Documentation = "https://github.com/tanvoai/langchain-tanvo#readme"
+Repository = "https://github.com/tanvoai/langchain-tanvo"
+Issues = "https://github.com/tanvoai/langchain-tanvo/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_tanvo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit_tests"]
